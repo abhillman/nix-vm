@@ -1,0 +1,24 @@
+Running declarative nixos in a terminal using qemu.
+
+**Running**
+Simply run `./build-run.sh` on a system with nix installed.
+
+**File listing**
+* `build-run.sh` -- run this to start the vm
+* `configuration.nix` -- declarative nixos (applications, etc.)
+
+**Configuring things**
+See https://search.nixos.org for packages and options that
+can be set in `configuration.nix`.
+
+**Starting over**
+State is persisted via nixos.qcow2, which is created after
+running build-run.sh. Delete nixos.qcow2 to regenerate from
+`configuration.nix`.
+
+**Understanding more about how this works**
+Inspect `build-run.sh` and the files created in `result/`.
+
+**Killing the process**
+
+  $ pkill qemu
